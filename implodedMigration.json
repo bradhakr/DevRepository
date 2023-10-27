@@ -6,7 +6,7 @@
       "checksum": "c7d85b4f35af245152336f4d1c0745a474f392fa",
       "description": "External hostname for the cluster",
       "hiddenProperty": false,
-      "value": "operatorgw.security.broadcom.com"
+      "value": "l7opr-gw.security.broadcom.com"
     },
     {
       "goid": "7f0ca896e3b55141e1e6d32df58e2a2f",
@@ -14,7 +14,7 @@
       "checksum": "2304d26eeb6e3a0e928c3bb9ca5e369a53dd2fce",
       "description": "l7Operator GW Env",
       "hiddenProperty": false,
-      "value": "Development"
+      "value": "TESTING"
     },
     {
       "goid": "7f0ca896e3b55141e1e6d32df58e2a37",
@@ -22,7 +22,7 @@
       "checksum": "b120d01d9037c415cfc4a73b64fde4b940049c92",
       "description": "l7operator.repository",
       "hiddenProperty": false,
-      "value": "DevRepository"
+      "value": "QARepository"
     }
   ],
   "internalUsers": [
@@ -37,48 +37,6 @@
       "lastName": "User",
       "email": "dev.user@broadcom.com",
       "memberOf": []
-    }
-  ],
-  "internalWebApiServices": [
-    {
-      "goid": "7f0ca896e3b55141e1e6d32df58e2614",
-      "guid": "2c2691b5-7543-44fc-932d-35574c5bc580",
-      "name": "Gateway GraphQL Management Service",
-      "resolutionPath": "/graphman",
-      "checksum": "f923bbb84adaddc9030c711c0c5e2a29689a72f6",
-      "enabled": true,
-      "folderPath": "/",
-      "methodsAllowed": [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE"
-      ],
-      "tracingEnabled": false,
-      "wssProcessingEnabled": true,
-      "policy": {
-        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <L7p:SslAssertion>\n                <L7p:RequireClientAuthentication booleanValue=\"true\"/>\n            </L7p:SslAssertion>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:SslAssertion/>\n                <L7p:HttpBasic/>\n            </wsp:All>\n            <L7p:assertionComment>\n                <L7p:Properties mapValue=\"included\">\n                    <L7p:entry>\n                        <L7p:key stringValue=\"RIGHT.COMMENT\"/>\n                        <L7p:value stringValue=\"~ enforce security checks\"/>\n                    </L7p:entry>\n                </L7p:Properties>\n            </L7p:assertionComment>\n        </wsp:OneOrMore>\n        <L7p:CustomizeErrorResponse>\n            <L7p:Content stringValue=\"${error_description}\"/>\n            <L7p:ExtraHeaders nameValuePairArray=\"included\"/>\n        </L7p:CustomizeErrorResponse>\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <L7p:Authentication>\n                <L7p:IdentityProviderOid goidValue=\"0000000000000000fffffffffffffffe\"/>\n            </L7p:Authentication>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:SetVariable>\n                    <L7p:Base64Expression stringValue=\"QXV0aGVudGljYXRpb24gZmFpbGVkLg==\"/>\n                    <L7p:VariableToSet stringValue=\"error_description\"/>\n                </L7p:SetVariable>\n                <L7p:FalseAssertion/>\n            </wsp:All>\n            <L7p:assertionComment>\n                <L7p:Properties mapValue=\"included\">\n                    <L7p:entry>\n                        <L7p:key stringValue=\"RIGHT.COMMENT\"/>\n                        <L7p:value stringValue=\"~ enforce authz\"/>\n                    </L7p:entry>\n                </L7p:Properties>\n            </L7p:assertionComment>\n        </wsp:OneOrMore>\n        <L7p:SetVariable>\n            <L7p:Base64Expression stringValue=\"RXJyb3IgZW5jb3VudGVyZWQgaW4gcHJvY2Vzc2luZyB0aGUgcmVxdWVzdC4gUGxlYXNlIGNoZWNrIHRoZSBTU0cgYXVkaXRzL2xvZ3MvYWRtaW5pc3RyYXRvciBmb3IgbW9yZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgcHJvYmxlbS4=\"/>\n            <L7p:VariableToSet stringValue=\"error_description\"/>\n        </L7p:SetVariable>\n        <L7p:CustomizeErrorResponse>\n            <L7p:Content stringValueReference=\"inline\"><![CDATA[{\n\"errors\": [\n    {\n        \"message\": \"${error_description}\"\n    }\n]\n}]]></L7p:Content>\n            <L7p:ContentType stringValue=\"application/json; charset=UTF-8\"/>\n            <L7p:ExtraHeaders nameValuePairArray=\"included\"/>\n            <L7p:HttpStatus stringValue=\"200\"/>\n        </L7p:CustomizeErrorResponse>\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <L7p:EvaluateJsonPathExpressionV2>\n                <L7p:Expression stringValue=\"$.query\"/>\n                <L7p:VariablePrefix stringValue=\"graphqlQuery\"/>\n            </L7p:EvaluateJsonPathExpressionV2>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:SetVariable>\n                    <L7p:Base64Expression stringValue=\"RXJyb3IgZW5jb3VudGVyZWQgaW4gcGFyc2luZyB0aGUgSlNPTiByZXF1ZXN0Lg==\"/>\n                    <L7p:VariableToSet stringValue=\"error_description\"/>\n                </L7p:SetVariable>\n                <L7p:FalseAssertion/>\n            </wsp:All>\n            <L7p:assertionComment>\n                <L7p:Properties mapValue=\"included\">\n                    <L7p:entry>\n                        <L7p:key stringValue=\"LEFT.COMMENT\"/>\n                        <L7p:value stringValue=\"extract query\"/>\n                    </L7p:entry>\n                </L7p:Properties>\n            </L7p:assertionComment>\n        </wsp:OneOrMore>\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <L7p:EvaluateJsonPathExpressionV2>\n                <L7p:Expression stringValue=\"$.variables\"/>\n                <L7p:VariablePrefix stringValue=\"graphqlVars\"/>\n            </L7p:EvaluateJsonPathExpressionV2>\n            <L7p:TrueAssertion/>\n            <L7p:assertionComment>\n                <L7p:Properties mapValue=\"included\">\n                    <L7p:entry>\n                        <L7p:key stringValue=\"LEFT.COMMENT\"/>\n                        <L7p:value stringValue=\"extract variables\"/>\n                    </L7p:entry>\n                </L7p:Properties>\n            </L7p:assertionComment>\n        </wsp:OneOrMore>\n        <L7p:GatewayGraphQL>\n            <L7p:Query stringValue=\"${graphqlQuery.result}\"/>\n            <L7p:Variables stringValue=\"${graphqlVars.result}\"/>\n        </L7p:GatewayGraphQL>\n    </wsp:All>\n</wsp:Policy>\n"
-      }
-    },
-    {
-      "goid": "7f0ca896e3b55141e1e6d32df58e264f",
-      "guid": "84a767fd-c828-4022-8d20-a61e1813a26e",
-      "name": "Gateway REST Management Service",
-      "resolutionPath": "/restman/*",
-      "checksum": "446f22627ff459733b56c3b55b179321df1b9952",
-      "enabled": true,
-      "folderPath": "/",
-      "methodsAllowed": [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE"
-      ],
-      "tracingEnabled": false,
-      "wssProcessingEnabled": true,
-      "policy": {
-        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <L7p:SslAssertion>\n                <L7p:RequireClientAuthentication booleanValue=\"true\"/>\n            </L7p:SslAssertion>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:SslAssertion/>\n                <L7p:HttpBasic/>\n            </wsp:All>\n        </wsp:OneOrMore>\n        <L7p:Authentication>\n            <L7p:IdentityProviderOid goidValue=\"0000000000000000fffffffffffffffe\"/>\n        </L7p:Authentication>\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <L7p:CommentAssertion>\n                <L7p:Comment stringValue=\"Check the request message size. If the maximum message size needs to be increased change the 'restman.request.message.maxSize' cluster property\"/>\n            </L7p:CommentAssertion>\n            <L7p:RequestSizeLimit>\n                <L7p:Limit stringValue=\"${gateway.restman.request.message.maxSize}\"/>\n            </L7p:RequestSizeLimit>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:CustomizeErrorResponse>\n                    <L7p:Content stringValueReference=\"inline\"><![CDATA[<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<l7:Error xmlns:l7=\"http://ns.l7tech.com/2010/04/gateway-management\">\n    <l7:Type>InvalidRequest</l7:Type>\n    <l7:Detail>the specified maximum data size limit would be exceeded</l7:Detail>\n</l7:Error>]]></L7p:Content>\n                    <L7p:ContentType stringValue=\"application/xml; charset=UTF-8\"/>\n                    <L7p:HttpStatus stringValue=\"400\"/>\n                </L7p:CustomizeErrorResponse>\n                <L7p:FalseAssertion/>\n            </wsp:All>\n        </wsp:OneOrMore>\n        <L7p:RESTGatewayManagement/>\n    </wsp:All>\n</wsp:Policy>\n"
-      }
     }
   ],
   "webApiServices": [
