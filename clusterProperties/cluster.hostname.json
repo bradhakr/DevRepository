@@ -1,8 +1,0 @@
-{
-  "goid": "0000000000000000fffffffffff5519f",
-  "name": "cluster.hostname",
-  "checksum": "aa769789af929e8d38dbaa3a2f95b8f63b676a5e",
-  "description": "External hostname for the cluster",
-  "hiddenProperty": false,
-  "value": "l7opr-gw.security.broadcom.com"
-}
