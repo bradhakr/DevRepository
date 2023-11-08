@@ -65,7 +65,7 @@
     {
       "goid": "7f0ca896e3b55141e1e6d32df58e29e6",
       "guid": "164dda5a-7db7-400b-a019-26780c9eb3b7",
-      "name": "Migration - GW Info",
+      "name": "Migration-GWInfo",
       "resolutionPath": "/rest/l7operator/getGWInfo",
       "checksum": "f1f005a9a6dab9a279eeb7e4face0fd530d81466",
       "enabled": true,
