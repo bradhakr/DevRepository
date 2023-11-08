@@ -48,19 +48,6 @@
       "memberOf": []
     }
   ],
-  "policyFragments": [
-    {
-      "goid": "01bf1fdc51c2be0864e983492f491ca7",
-      "guid": "6db12221-77fa-40cd-a915-307d6df17640",
-      "name": "Manage Response Headers",
-      "checksum": "8f24608532798d717cf67f0daa127ba4c300ebbc",
-      "folderPath": "/Migration",
-      "soap": false,
-      "policy": {
-        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: Manage Response Headers\"/>\n        </L7p:CommentAssertion>\n        <wsp:All wsp:Usage=\"Required\">\n            <L7p:AddHeader>\n                <L7p:HeaderName stringValue=\"Access-Control-Allow-Origin\"/>\n                <L7p:HeaderValue stringValue=\"${Origin}\"/>\n                <L7p:Target target=\"RESPONSE\"/>\n            </L7p:AddHeader>\n            <L7p:AddHeader>\n                <L7p:HeaderName stringValue=\"Access-Control-Allow-Methods\"/>\n                <L7p:HeaderValue stringValue=\"*\"/>\n                <L7p:Target target=\"RESPONSE\"/>\n            </L7p:AddHeader>\n            <L7p:AddHeader>\n                <L7p:HeaderName stringValue=\"Access-Control-Allow-Headers\"/>\n                <L7p:HeaderValue stringValue=\"${Headers}\"/>\n                <L7p:Target target=\"RESPONSE\"/>\n            </L7p:AddHeader>\n            <L7p:AddHeader>\n                <L7p:HeaderName stringValue=\"Access-Control-Expose-Headers\"/>\n                <L7p:HeaderValue stringValue=\"${Headers}\"/>\n                <L7p:Target target=\"RESPONSE\"/>\n            </L7p:AddHeader>\n            <L7p:AddHeader>\n                <L7p:HeaderName stringValue=\"Access-Control-Allow-Credentials\"/>\n                <L7p:HeaderValue stringValue=\"${Credentials}\"/>\n                <L7p:Target target=\"RESPONSE\"/>\n            </L7p:AddHeader>\n            <L7p:AddHeader>\n                <L7p:HeaderName stringValue=\"Access-Control-Max-Age\"/>\n                <L7p:HeaderValue stringValue=\"86400\"/>\n                <L7p:Target target=\"RESPONSE\"/>\n            </L7p:AddHeader>\n            <L7p:AddHeader>\n                <L7p:HeaderName stringValue=\"content-type\"/>\n                <L7p:HeaderValue stringValue=\"application/json\"/>\n                <L7p:Target target=\"RESPONSE\"/>\n            </L7p:AddHeader>\n        </wsp:All>\n    </wsp:All>\n</wsp:Policy>\n"
-      }
-    }
-  ],
   "webApiServices": [
     {
       "goid": "7f0ca896e3b55141e1e6d32df58e29e6",
