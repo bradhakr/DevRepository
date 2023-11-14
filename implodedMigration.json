@@ -1,6 +1,14 @@
 {
   "clusterProperties": [
     {
+      "goid": "0000000000000000fffffffffff5519f",
+      "name": "cluster.hostname",
+      "checksum": "c7d85b4f35af245152336f4d1c0745a474f392fa",
+      "description": "External hostname for the cluster",
+      "hiddenProperty": false,
+      "value": "devl7optgw.security.broadcom.com"
+    },
+    {
       "goid": "7f0ca896e3b55141e1e6d32df58e2a2f",
       "name": "operator.environment",
       "checksum": "2304d26eeb6e3a0e928c3bb9ca5e369a53dd2fce",
@@ -17,61 +25,6 @@
       "value": "DevRepository"
     }
   ],
-  "encassConfigs": [
-    {
-      "goid": "7f0ca896e3b55141e1e6d32df591e0cb",
-      "guid": "d049dd6f-250f-477a-bfa3-262887f5ead0",
-      "name": "FetchResponseHeaders",
-      "checksum": "07392017185d8e71b02d82bb78d49b42b5fd8a22",
-      "description": "Fetch Response Headers",
-      "policyName": "Migration-GetGatewayInfoHeaders",
-      "encassArgs": [
-        {
-          "name": "allowCredentials",
-          "type": "STRING",
-          "ordinal": 1,
-          "guiPrompt": true,
-          "guiLabel": "Allow Credentials"
-        },
-        {
-          "name": "allowHeaders",
-          "type": "STRING",
-          "ordinal": 2,
-          "guiPrompt": true,
-          "guiLabel": "Allowed Headers"
-        },
-        {
-          "name": "allowMethods",
-          "type": "STRING",
-          "ordinal": 3,
-          "guiPrompt": true,
-          "guiLabel": "Allowed Methods"
-        },
-        {
-          "name": "allowOrigin",
-          "type": "STRING",
-          "ordinal": 4,
-          "guiPrompt": true,
-          "guiLabel": "allowedOrigins"
-        }
-      ],
-      "encassResults": [],
-      "properties": [
-        {
-          "name": "allowTracing",
-          "value": "true"
-        },
-        {
-          "name": "paletteFolder",
-          "value": "routing"
-        },
-        {
-          "name": "passMetricsToParent",
-          "value": "true"
-        }
-      ]
-    }
-  ],
   "internalUsers": [
     {
       "goid": "7f0ca896e3b55141e1e6d32df58e2a3f",
@@ -84,42 +37,6 @@
       "lastName": "User",
       "email": "dev.user@broadcom.com",
       "memberOf": []
-    }
-  ],
-  "webApiServices": [
-    {
-      "goid": "7f0ca896e3b55141e1e6d32df58e29e6",
-      "guid": "4024de21-1bba-4bae-be08-6dc8c550b807",
-      "name": "Migration - GW Info",
-      "resolutionPath": "/rest/l7operator/getGWInfo",
-      "checksum": "3c49f5f3f105362d29d02251cc17a4728796e559",
-      "enabled": true,
-      "folderPath": "/Migration",
-      "methodsAllowed": [
-        "GET",
-        "POST",
-        "PUT",
-        "DELETE",
-        "OPTIONS"
-      ],
-      "tracingEnabled": false,
-      "wssProcessingEnabled": false,
-      "policy": {
-        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"API :- Layer7 Operator UseCase - GW Info\"/>\n        </L7p:CommentAssertion>\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"************************************************************\"/>\n        </L7p:CommentAssertion>\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"API Group :- REST Encryption\"/>\n        </L7p:CommentAssertion>\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"API TYPE :- REST\"/>\n        </L7p:CommentAssertion>\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Author: Balaji Radhakrishnan\"/>\n        </L7p:CommentAssertion>\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"************************************************************\"/>\n        </L7p:CommentAssertion>\n        <wsp:All wsp:Usage=\"Required\">\n            <L7p:SetVariable>\n                <L7p:Base64Expression stringValue=\"MjAw\"/>\n                <L7p:VariableToSet stringValue=\"RespCode\"/>\n            </L7p:SetVariable>\n            <L7p:SetVariable>\n                <L7p:Base64Expression stringValue=\"eyAiRXhjZXB0aW9uIjogIkF1dGhlbnRpY2F0aW9uIEZhaWxlZCIsDQogICJEZXNjcmlwdGlvbiI6ICJVc2VyIG5vdCBmb3VuZCwgcGxlYXNlIGNoZWNrIHJlLXRyeS4iIH0=\"/>\n                <L7p:VariableToSet stringValue=\"Error\"/>\n            </L7p:SetVariable>\n            <L7p:SetVariable>\n                <L7p:Base64Expression stringValue=\"JHtyZXF1ZXN0Lmh0dHAuaGVhZGVyLm9yaWdpbn0=\"/>\n                <L7p:VariableToSet stringValue=\"origin\"/>\n            </L7p:SetVariable>\n            <L7p:SetVariable>\n                <L7p:Base64Expression stringValue=\"JHtyZXF1ZXN0Lmh0dHAubWV0aG9kfQ==\"/>\n                <L7p:VariableToSet stringValue=\"method\"/>\n            </L7p:SetVariable>\n        </wsp:All>\n        <wsp:OneOrMore wsp:Usage=\"Required\">\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:SslAssertion/>\n                <L7p:Encapsulated>\n                    <L7p:EncapsulatedAssertionConfigGuid stringValue=\"d049dd6f-250f-477a-bfa3-262887f5ead0\"/>\n                    <L7p:EncapsulatedAssertionConfigName stringValue=\"FetchResponseHeaders\"/>\n                    <L7p:Parameters mapValue=\"included\">\n                        <L7p:entry>\n                            <L7p:key stringValue=\"allowCredentials\"/>\n                            <L7p:value stringValue=\"true\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"allowHeaders\"/>\n                            <L7p:value stringValue=\"Authorization, Content-Type\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"allowMethods\"/>\n                            <L7p:value stringValue=\"GET, OPTIONS\"/>\n                        </L7p:entry>\n                        <L7p:entry>\n                            <L7p:key stringValue=\"allowOrigin\"/>\n                            <L7p:value stringValue=\"${origin}\"/>\n                        </L7p:entry>\n                    </L7p:Parameters>\n                </L7p:Encapsulated>\n                <wsp:OneOrMore wsp:Usage=\"Required\">\n                    <wsp:All wsp:Usage=\"Required\">\n                        <L7p:ComparisonAssertion>\n                            <L7p:CaseSensitive booleanValue=\"false\"/>\n                            <L7p:Expression1 stringValue=\"${method}\"/>\n                            <L7p:Operator operatorNull=\"null\"/>\n                            <L7p:Predicates predicates=\"included\">\n                                <L7p:item dataType=\"included\">\n                                    <L7p:Type variableDataType=\"string\"/>\n                                </L7p:item>\n                                <L7p:item binary=\"included\">\n                                    <L7p:RightValue stringValue=\"OPTIONS\"/>\n                                </L7p:item>\n                            </L7p:Predicates>\n                        </L7p:ComparisonAssertion>\n                        <L7p:HardcodedResponse>\n                            <L7p:Base64ResponseBody stringValue=\"eyAiU3VjY2VzcyI6ICJZb3VyIEdhdGV3YXkgaXMgdXAgYW5kIFJ1bm5pbmciLAogICJBdXRoZW50aWNhdGVkVXNlciI6ICIke3JlcXVlc3QudXNlcm5hbWV9IiwKICAiUmVwb3NpdG9yeSI6ICIke2dhdGV3YXkub3BlcmF0b3IucmVwb3NpdG9yeX0iLAogICJFbnZpcm9ubWVudCI6ICIke2dhdGV3YXkub3BlcmF0b3IuZW52aXJvbm1lbnR9IiwKICAgIkhvc3RuYW1lIjogIiR7Z2F0ZXdheS5jbHVzdGVyLmhvc3RuYW1lfSIsCiAgIk1ldGhvZCI6ICIke21ldGhvZH0iIH0=\"/>\n                            <L7p:ResponseContentType stringValue=\"application/json; charset=UTF-8\"/>\n                        </L7p:HardcodedResponse>\n                    </wsp:All>\n                    <wsp:All wsp:Usage=\"Required\">\n                        <L7p:HttpBasic/>\n                        <L7p:Authentication>\n                            <L7p:IdentityProviderOid goidValue=\"0000000000000000fffffffffffffffe\"/>\n                        </L7p:Authentication>\n                        <L7p:HardcodedResponse>\n                            <L7p:Base64ResponseBody stringValue=\"eyAiU3VjY2VzcyI6ICJZb3VyIEdhdGV3YXkgaXMgdXAgYW5kIFJ1bm5pbmciLAogICJBdXRoZW50aWNhdGVkVXNlciI6ICIke3JlcXVlc3QudXNlcm5hbWV9IiwKICAiUmVwb3NpdG9yeSI6ICIke2dhdGV3YXkub3BlcmF0b3IucmVwb3NpdG9yeX0iLAogICJFbnZpcm9ubWVudCI6ICIke2dhdGV3YXkub3BlcmF0b3IuZW52aXJvbm1lbnR9IiwKICAgIkhvc3RuYW1lIjogIiR7Z2F0ZXdheS5jbHVzdGVyLmhvc3RuYW1lfSIsCiAgIk1ldGhvZCI6ICIke21ldGhvZH0iIH0=\"/>\n                            <L7p:ResponseContentType stringValue=\"application/json; charset=UTF-8\"/>\n                        </L7p:HardcodedResponse>\n                    </wsp:All>\n                </wsp:OneOrMore>\n            </wsp:All>\n            <wsp:All wsp:Usage=\"Required\">\n                <L7p:SetVariable>\n                    <L7p:Base64Expression stringValue=\"NDAx\"/>\n                    <L7p:VariableToSet stringValue=\"RespCode\"/>\n                </L7p:SetVariable>\n                <L7p:SetVariable>\n                    <L7p:Base64Expression stringValue=\"eyAiRXhjZXB0aW9uIjogIkF1dGhlbnRpY2F0aW9uIEZhaWxlZCIsDQogICJEZXNjcmlwdGlvbiI6ICJVc2VyIG5vdCBmb3VuZCwgcGxlYXNlIGNoZWNrIHJlLXRyeS4iIH0=\"/>\n                    <L7p:VariableToSet stringValue=\"Error\"/>\n                </L7p:SetVariable>\n                <L7p:CustomizeErrorResponse>\n                    <L7p:Content stringValue=\"${Error}\"/>\n                    <L7p:ContentType stringValue=\"application/json; charset=UTF-8\"/>\n                    <L7p:ExtraHeaders nameValuePairArray=\"included\">\n                        <L7p:item nameValuePair=\"included\">\n                            <L7p:Key stringValue=\"l7-resp-code\"/>\n                            <L7p:Value stringValue=\"${RespCode}\"/>\n                        </L7p:item>\n                    </L7p:ExtraHeaders>\n                    <L7p:HttpStatus stringValue=\"${RespCode}\"/>\n                    <L7p:IncludePolicyDownloadURL booleanValue=\"true\"/>\n                </L7p:CustomizeErrorResponse>\n                <L7p:RaiseError/>\n            </wsp:All>\n        </wsp:OneOrMore>\n    </wsp:All>\n</wsp:Policy>\n"
-      }
-    }
-  ],
-  "policyFragments": [
-    {
-      "goid": "7f0ca896e3b55141e1e6d32df591dcfa",
-      "guid": "c7f1451c-9b20-40bd-8b57-8ec5e9a2464f",
-      "name": "Migration-GetGatewayInfoHeaders",
-      "checksum": "802384f5c107ac77cda7df840d8bef4c085e34c8",
-      "folderPath": "/Migration",
-      "soap": false,
-      "policy": {
-        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wsp:Policy xmlns:L7p=\"http://www.layer7tech.com/ws/policy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2002/12/policy\">\n    <wsp:All wsp:Usage=\"Required\">\n        <L7p:CommentAssertion>\n            <L7p:Comment stringValue=\"Policy Fragment: Migration-GetGatewayInfoHeaders\"/>\n        </L7p:CommentAssertion>\n        <L7p:AddHeader>\n            <L7p:HeaderName stringValue=\"Access-Control-Allow-Credentials\"/>\n            <L7p:HeaderValue stringValue=\"${allowCredentials}\"/>\n            <L7p:RemoveExisting booleanValue=\"true\"/>\n            <L7p:Target target=\"RESPONSE\"/>\n        </L7p:AddHeader>\n        <L7p:AddHeader>\n            <L7p:HeaderName stringValue=\"Access-Control-Allow-Origin\"/>\n            <L7p:HeaderValue stringValue=\"${allowOrigin}\"/>\n            <L7p:RemoveExisting booleanValue=\"true\"/>\n            <L7p:Target target=\"RESPONSE\"/>\n        </L7p:AddHeader>\n        <L7p:AddHeader>\n            <L7p:HeaderName stringValue=\"Access-Control-Allow-Methods\"/>\n            <L7p:HeaderValue stringValue=\"${allowMethods}\"/>\n            <L7p:RemoveExisting booleanValue=\"true\"/>\n            <L7p:Target target=\"RESPONSE\"/>\n        </L7p:AddHeader>\n        <L7p:AddHeader>\n            <L7p:HeaderName stringValue=\"Access-Control-Allow-Headers\"/>\n            <L7p:HeaderValue stringValue=\"${allowHeaders}\"/>\n            <L7p:RemoveExisting booleanValue=\"true\"/>\n            <L7p:Target target=\"RESPONSE\"/>\n        </L7p:AddHeader>\n        <L7p:AddHeader>\n            <L7p:HeaderName stringValue=\"ccess-Control-Expose-Headers\"/>\n            <L7p:HeaderValue stringValue=\"${allowHeaders}\"/>\n            <L7p:RemoveExisting booleanValue=\"true\"/>\n            <L7p:Target target=\"RESPONSE\"/>\n        </L7p:AddHeader>\n    </wsp:All>\n</wsp:Policy>\n"
-      }
     }
   ]
 }
