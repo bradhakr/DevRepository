@@ -6,7 +6,7 @@
       "checksum": "c7d85b4f35af245152336f4d1c0745a474f392fa",
       "description": "External hostname for the cluster",
       "hiddenProperty": false,
-      "value": "devl7optgw.security.broadcom.com"
+      "value": "dev-op.gcp-op.security.broadcom.com"
     },
     {
       "goid": "7f0ca896e3b55141e1e6d32df58e2a2f",
