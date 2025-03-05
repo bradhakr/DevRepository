@@ -4,5 +4,5 @@
   "checksum": "c7d85b4f35af245152336f4d1c0745a474f392fa",
   "description": "External hostname for the cluster",
   "hiddenProperty": false,
-  "value": "l7opt.gke.security.broadcom.com"
+  "value": "swa.gke.security.broadcom.com"
 }
