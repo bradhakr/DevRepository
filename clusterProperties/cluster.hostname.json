@@ -1,8 +1,7 @@
 {
   "goid": "0000000000000000fffffffffff5519f",
   "name": "cluster.hostname",
-  "checksum": "c7d85b4f35af245152336f4d1c0745a474f392fa",
-  "description": "External hostname for the cluster",
+  "checksum": "69905136c880b9c3985ad06e2b525b78b610c0d8",
   "hiddenProperty": false,
-  "value": "ameriprise.gke.security.broadcom.com"
+  "value": "ssggw.gke.security.broadcom.com"
 }
