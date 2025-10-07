@@ -4,5 +4,5 @@
   "checksum": "2304d26eeb6e3a0e928c3bb9ca5e369a53dd2fce",
   "description": "l7Operator GW Environment",
   "hiddenProperty": false,
-  "value": "Development"
+  "value": "STAGING"
 }
