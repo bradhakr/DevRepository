@@ -1,0 +1,8 @@
+{
+  "goid": "988fab8d60fd29805afc24c8a975cd8a",
+  "name": "httpsProxy.port",
+  "checksum": "e75ddcbd67c943b8f03263a477b3198e35362010",
+  "description": "",
+  "hiddenProperty": false,
+  "value": "8080"
+}
