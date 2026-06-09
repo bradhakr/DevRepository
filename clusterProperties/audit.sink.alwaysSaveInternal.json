@@ -1,0 +1,8 @@
+{
+  "goid": "2cb3921d99d178d35f7b2b47a033caa0",
+  "name": "audit.sink.alwaysSaveInternal",
+  "checksum": "308a8aa1bd7c7afe0807411d9aa3e09b2ef975b7",
+  "description": "If true, audit records will always be saved to the internal database, even if they were successfully processed via a configured audit sink policy. (default=false)",
+  "hiddenProperty": true,
+  "value": "False"
+}
