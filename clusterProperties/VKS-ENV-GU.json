@@ -1,0 +1,8 @@
+{
+  "goid": "2cb3921d99d178d35f7b2b47a033ca93",
+  "name": "VKS-ENV-GU",
+  "checksum": "31136a07bd6cd63b4b3ff7dfd191d87c9b27b1fa",
+  "description": "VKS Gateway Utility",
+  "hiddenProperty": false,
+  "value": "STAGE"
+}
