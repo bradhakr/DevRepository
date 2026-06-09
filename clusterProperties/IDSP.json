@@ -1,0 +1,8 @@
+{
+  "goid": "2cb3921d99d178d35f7b2b47a033caeb",
+  "name": "IDSP",
+  "checksum": "7819a0d1a593fbeaffd1f9919cfc2b734fb2531c",
+  "description": "IDSP OIDC Provider also OAUTH",
+  "hiddenProperty": false,
+  "value": "True"
+}
