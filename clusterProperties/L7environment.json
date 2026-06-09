@@ -1,0 +1,8 @@
+{
+  "goid": "503b614699ffc76fcb8cb98b7251eb95",
+  "name": "L7environment",
+  "checksum": "da416d7bd1739c6b7cf58e0c0afac180cea40979",
+  "description": "Stores the Layer7 environment",
+  "hiddenProperty": false,
+  "value": "PROD"
+}
