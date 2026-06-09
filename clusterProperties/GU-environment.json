@@ -1,0 +1,8 @@
+{
+  "goid": "503b622599ffc76fcb8cb98b7251eb95",
+  "name": "GU-environment",
+  "checksum": "00bc60dc204e6c44272c154d947cf0442609c567",
+  "description": "Stores the Graphman Utility environment",
+  "hiddenProperty": false,
+  "value": "PROD"
+}
